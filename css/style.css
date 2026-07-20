@@ -1,0 +1,1070 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+:root{
+
+    --primary:#2563eb;
+    --secondary:#06b6d4;
+    --background:#f1f5f9;
+    --card:#ffffff;
+    --text:#0f172a;
+    --sidebar:#ffffff;
+
+}
+
+
+
+body{
+
+    background:var(--background);
+
+    color:var(--text);
+
+    min-height:100vh;
+
+    transition:.3s;
+
+}
+
+
+
+
+/* APP */
+
+.app{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+
+
+
+
+
+/* SIDEBAR */
+
+
+.sidebar{
+
+    width:270px;
+
+    background:var(--sidebar);
+
+    padding:25px;
+
+    box-shadow:0 0 25px rgba(0,0,0,.08);
+
+    position:fixed;
+
+    height:100vh;
+
+    left:0;
+
+    top:0;
+
+    transition:.3s;
+
+}
+
+
+
+
+.logo{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+
+.sidebar h2{
+
+    font-size:20px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+/* PROFILE */
+
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:#f8fafc;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.avatar{
+
+    width:45px;
+
+    height:45px;
+
+    background:#e0f2fe;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:22px;
+
+}
+
+
+
+
+.profile p{
+
+    font-size:12px;
+
+    color:#64748b;
+
+    word-break:break-all;
+
+}
+
+
+
+
+
+
+/* MENU */
+
+
+nav button{
+
+
+    width:100%;
+
+    border:none;
+
+    background:none;
+
+    padding:13px;
+
+    text-align:left;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    margin-bottom:8px;
+
+    transition:.3s;
+
+
+}
+
+
+
+nav button:hover{
+
+    background:#e0f2fe;
+
+}
+
+
+
+nav button.active{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+
+    color:white;
+
+}
+
+
+
+
+
+
+
+/* DARK BUTTON */
+
+
+#darkModeBtn,
+#logoutBtn{
+
+
+    width:100%;
+
+    border:none;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    margin-top:15px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+}
+
+
+
+#darkModeBtn{
+
+    background:#0f172a;
+
+    color:white;
+
+}
+
+
+
+#logoutBtn{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+
+
+
+
+/* CONTENT */
+
+
+.content{
+
+    margin-left:270px;
+
+    padding:30px;
+
+    width:calc(100% - 270px);
+
+
+}
+
+
+
+header{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:30px;
+
+
+}
+
+
+
+header h1{
+
+    font-size:28px;
+
+}
+
+
+
+
+
+.menu-btn{
+
+    display:none;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+
+
+
+/* SECTIONS */
+
+
+.section{
+
+    display:none;
+
+}
+
+
+.section.active{
+
+    display:block;
+
+}
+
+
+
+
+
+
+
+/* DASHBOARD CARDS */
+
+
+.cards{
+
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+
+    gap:20px;
+
+    margin-top:20px;
+
+}
+
+
+
+.card{
+
+
+    background:var(--card);
+
+    padding:25px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+.card h3{
+
+    color:#64748b;
+
+    margin-bottom:15px;
+
+}
+
+
+.card span{
+
+
+    font-size:35px;
+
+    font-weight:bold;
+
+
+}
+
+
+
+
+
+
+
+/* TOOLBAR */
+
+
+.toolbar{
+
+
+    display:flex;
+
+    gap:15px;
+
+    margin:20px 0;
+
+}
+
+
+
+.toolbar input,
+.toolbar select{
+
+
+    padding:12px;
+
+    border-radius:12px;
+
+    border:1px solid #ddd;
+
+    width:250px;
+
+}
+
+
+
+
+
+
+/* BUTTONS */
+
+
+.addButton{
+
+
+    background:#16a34a;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* TASK CARD */
+
+
+.task{
+
+
+    background:var(--card);
+
+    margin-top:15px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+
+}
+
+
+
+
+
+.task button{
+
+
+    border:none;
+
+    padding:8px 12px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+
+/* TOAST */
+
+
+#toast{
+
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+
+    background:#111827;
+
+    color:white;
+
+    padding:15px 25px;
+
+    border-radius:12px;
+
+
+    display:none;
+
+    z-index:999;
+
+
+}
+
+
+
+
+
+
+
+/* DARK MODE */
+
+
+.dark{
+
+
+    --background:#020617;
+
+    --card:#0f172a;
+
+    --text:white;
+
+    --sidebar:#0f172a;
+
+
+}
+
+
+.dark .profile{
+
+    background:#1e293b;
+
+}
+
+
+.dark .toolbar input,
+.dark .toolbar select{
+
+    background:#1e293b;
+
+    color:white;
+
+}
+
+
+
+
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:900px){
+
+
+.sidebar{
+
+
+    left:-300px;
+
+
+}
+
+
+
+.sidebar.active{
+
+
+    left:0;
+
+}
+
+
+
+.content{
+
+
+    margin-left:0;
+
+    width:100%;
+
+}
+
+
+
+.menu-btn{
+
+
+    display:block;
+
+}
+
+
+
+.cards{
+
+    grid-template-columns:1fr;
+
+}
+
+
+.toolbar{
+
+    flex-direction:column;
+
+}
+
+
+
+.toolbar input,
+.toolbar select{
+
+    width:100%;
+
+}
+
+
+}
+
+
+/* ============================
+   ADD BOX
+============================ */
+
+.addBox{
+
+    background:var(--card);
+
+    padding:25px;
+
+    border-radius:18px;
+
+    margin:20px 0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+/* ============================
+   INPUTS
+============================ */
+
+.addBox input,
+.addBox textarea,
+.addBox select{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:1px solid #dbe4ee;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
+    background:white;
+
+}
+
+
+.addBox input:focus,
+.addBox textarea:focus,
+.addBox select:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+
+}
+
+
+/* ============================
+   TEXTAREA
+============================ */
+
+.addBox textarea{
+
+    resize:vertical;
+
+    min-height:120px;
+
+}
+
+
+/* ============================
+   DATE & SELECT
+============================ */
+
+.addBox input[type="date"]{
+
+    cursor:pointer;
+
+}
+
+
+.addBox select{
+
+    cursor:pointer;
+
+}
+
+
+/* ============================
+   SAVE BUTTON
+============================ */
+
+.addButton{
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #06b6d4
+    );
+
+    color:white;
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.addButton:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 20px rgba(37,99,235,.25);
+
+}
+
+
+.addButton:active{
+
+    transform:scale(.98);
+
+}
+
+
+/* ============================
+   LIST
+============================ */
+
+#homeworkList,
+#examList,
+#projectList{
+
+    margin-top:25px;
+
+}
+
+
+/* ============================
+   TASK CARD
+============================ */
+
+.task{
+
+    background:var(--card);
+
+    border-radius:16px;
+
+    padding:18px 22px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:15px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+
+.task:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+.task h3{
+
+    margin-bottom:8px;
+
+    color:var(--primary);
+
+}
+
+
+.task p{
+
+    margin:4px 0;
+
+    color:#64748b;
+
+    font-size:14px;
+
+}
+
+
+/* ============================
+   TASK BUTTONS
+============================ */
+
+.task button{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+
+    margin-left:8px;
+
+}
+
+
+.task button:nth-child(1){
+
+    background:#facc15;
+
+}
+
+
+.task button:nth-child(2){
+
+    background:#22c55e;
+
+    color:white;
+
+}
+
+
+.task button:nth-child(3){
+
+    background:#ef4444;
+
+    color:white;
+
+}
+
+
+.task button:hover{
+
+    transform:scale(1.08);
+
+}
+
+
+/* ============================
+   CHART BOX
+============================ */
+
+.chartBox{
+
+    background:var(--card);
+
+    margin-top:25px;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+#taskChart{
+
+    max-width:420px;
+
+    max-height:320px;
+
+    margin:auto;
+
+}
+
+
+/* ============================
+   RECENT + UPCOMING
+============================ */
+
+.recent,
+.upcoming{
+
+    background:var(--card);
+
+    margin-top:25px;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+/* ============================
+   DARK MODE
+============================ */
+
+.dark .addBox{
+
+    background:#0f172a;
+
+}
+
+
+.dark .addBox input,
+.dark .addBox textarea,
+.dark .addBox select{
+
+    background:#1e293b;
+
+    color:white;
+
+    border:1px solid #334155;
+
+}
+
+
+.dark .task{
+
+    background:#0f172a;
+
+}
+
+
+.dark .task p{
+
+    color:#cbd5e1;
+
+}
+
+
+.dark .recent,
+.dark .upcoming,
+.dark .chartBox{
+
+    background:#0f172a;
+
+}
