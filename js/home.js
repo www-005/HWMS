@@ -328,14 +328,23 @@ active
 // ======================================
 
 
+const closeMenu =
+document.getElementById("closeMenu");
+
+
 menuBtn.addEventListener("click",()=>{
 
-
-sidebar.classList.toggle("active");
-
+sidebar.classList.add("active");
 
 });
 
+
+
+closeMenu.addEventListener("click",()=>{
+
+sidebar.classList.remove("active");
+
+});
 // ======================================
 // PART 2
 // HOMEWORK SYSTEM
@@ -2491,16 +2500,4 @@ responsive:true
 
 }
 
-const menuBtn = document.getElementById("menuBtn");
-const sidebar = document.getElementById("sidebar");
-const closeMenu = document.getElementById("closeMenu");
 
-
-menuBtn.addEventListener("click", () => {
-    sidebar.classList.add("active");
-});
-
-
-closeMenu.addEventListener("click", () => {
-    sidebar.classList.remove("active");
-});
