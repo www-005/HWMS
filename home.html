@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="sq">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Homework Management System</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar" id="sidebar">
+
+
+<div class="logo">
+HWMS
+</div>
+
+
+<h2>
+Homework
+<br>
+Management
+</h2>
+
+
+
+<div class="profile">
+
+<div class="avatar">
+👤
+</div>
+
+
+<div>
+
+<p id="userEmail">
+Loading...
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<nav>
+
+
+<button class="active" onclick="showSection('dashboard',this)">
+📊 Dashboard
+</button>
+
+
+<button onclick="showSection('homework',this)">
+📘 Detyrat
+</button>
+
+
+<button onclick="showSection('exams',this)">
+🧪 Provimet
+</button>
+
+
+<button onclick="showSection('projects',this)">
+💡 Projektet
+</button>
+
+
+<button onclick="showSection('calendar',this)">
+📅 Kalendari
+</button>
+
+
+<button onclick="showSection('settings',this)">
+⚙ Cilësimet
+</button>
+
+
+</nav>
+
+
+
+
+
+<button id="darkModeBtn">
+🌙 Dark Mode
+</button>
+
+
+<button id="logoutBtn">
+🚪 Dil
+</button>
+
+
+
+</aside>
+
+
+
+
+
+
+
+
+<!-- MAIN -->
+
+<main class="content">
+
+
+
+<header>
+
+<div class="menu-btn" id="menuBtn">
+☰
+</div>
+
+
+<h1>
+Mirë se erdhe 👋
+</h1>
+
+
+</header>
+
+
+
+
+
+
+
+<!-- DASHBOARD -->
+
+<section id="dashboard" class="section active">
+
+
+<h2>
+📊 Dashboard
+</h2>
+
+
+
+<div class="cards">
+
+
+
+<div class="card">
+
+<h3>
+📘 Detyra
+</h3>
+
+<span id="homeworkCount">
+0
+</span>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>
+🧪 Provime
+</h3>
+
+
+<span id="examCount">
+0
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>
+💡 Projekte
+</h3>
+
+
+<span id="projectCount">
+0
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- CHART -->
+
+
+<div class="chartBox">
+
+
+<h2>
+📈 Statistika
+</h2>
+
+
+<canvas id="taskChart"></canvas>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- RECENT -->
+
+
+<div class="recent">
+
+
+<h2>
+📌 Detyrat e fundit
+</h2>
+
+
+<div id="recentTasks">
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- UPCOMING -->
+
+
+<div class="upcoming">
+
+
+<h2>
+⏰ Afatet e ardhshme
+</h2>
+
+
+<div id="upcomingTasks">
+
+</div>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- HOMEWORK -->
+
+<section id="homework" class="section">
+
+
+<h2>
+📘 Detyrat e Shtëpisë
+</h2>
+
+
+
+
+<div class="toolbar">
+
+
+<input 
+id="searchHomework"
+placeholder="🔍 Kërko detyrë...">
+
+
+
+<select id="sortHomework">
+
+
+<option value="newest">
+📅 Më të rejat
+</option>
+
+
+<option value="oldest">
+📅 Më të vjetrat
+</option>
+
+
+<option value="priority">
+⭐ Prioriteti
+</option>
+
+
+
+</select>
+
+
+
+
+<select id="filterHomework">
+
+
+<option value="all">
+Të gjitha
+</option>
+
+
+<option value="pending">
+Në pritje
+</option>
+
+
+<option value="completed">
+Përfunduara
+</option>
+
+
+</select>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="addBox">
+
+
+<input
+id="homeworkSubject"
+placeholder="Emri i lëndës">
+
+
+
+<textarea
+id="homeworkDescription"
+placeholder="Përshkrimi i detyrës">
+</textarea>
+
+
+
+
+<input
+type="date"
+id="homeworkDate">
+
+
+
+
+
+<select id="homeworkPriority">
+
+
+<option value="High">
+🔴 High
+</option>
+
+
+<option value="Medium">
+🟠 Medium
+</option>
+
+
+<option value="Low">
+🟢 Low
+</option>
+
+
+
+</select>
+
+
+
+
+<button
+class="addButton"
+id="saveHomeworkBtn">
+
++ Ruaj Detyrën
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+<div id="homeworkList">
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- EXAMS -->
+
+
+<section id="exams" class="section">
+
+
+<h2>
+🧪 Provimet
+</h2>
+
+
+
+
+<div class="addBox">
+
+
+<input
+id="examSubject"
+placeholder="Emri i lëndës">
+
+
+
+<textarea
+id="examDescription"
+placeholder="Përshkrimi">
+</textarea>
+
+
+
+<input
+type="date"
+id="examDate">
+
+
+
+<button
+class="addButton"
+id="saveExamBtn">
+
++ Ruaj Provimin
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+<div id="examList">
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- PROJECTS -->
+
+
+<section id="projects" class="section">
+
+
+<h2>
+💡 Projektet
+</h2>
+
+
+
+
+
+<div class="addBox">
+
+
+<input
+id="projectTitle"
+placeholder="Emri i projektit">
+
+
+
+<textarea
+id="projectDescription"
+placeholder="Përshkrimi">
+</textarea>
+
+
+
+
+<input
+type="date"
+id="projectDate">
+
+
+
+<button
+class="addButton"
+id="saveProjectBtn">
+
++ Ruaj Projektin
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+<div id="projectList">
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- CALENDAR -->
+
+
+<section id="calendar" class="section">
+
+
+<h2>
+📅 Kalendari
+</h2>
+
+
+
+<div id="calendarBox">
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- SETTINGS -->
+
+
+<section id="settings" class="section">
+
+
+<h2>
+⚙ Cilësimet
+</h2>
+
+
+<p>
+Këtu do të vendosen opsionet e sistemit.
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+</main>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- TOAST -->
+
+
+<div id="toast">
+
+</div>
+
+
+
+
+
+<!-- CHART JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+<!-- MAIN JS -->
+
+<script type="module" src="js/home.js"></script>
+
+
+
+</body>
+
+</html>
